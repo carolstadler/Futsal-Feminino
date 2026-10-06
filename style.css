@@ -1,0 +1,1048 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff2b78;
+    --pink2: #ff5b98;
+    --black: #08080b;
+    --dark: #111116;
+    --dark2: #19191f;
+    --white: #ffffff;
+    --light: #f5f5f7;
+    --gray: #73737c;
+    --line: #e5e5e8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--light);
+    color: #0a0a0d;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* HEADER */
+
+.header {
+    height: 82px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-family: "Montserrat", sans-serif;
+    color: #09090b;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.logo strong {
+    color: var(--pink);
+}
+
+.logo small {
+    display: block;
+    font-family: "DM Sans";
+    font-size: 7px;
+    letter-spacing: 2.5px;
+    color: #888;
+    margin-top: -1px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #24242a;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 690px;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    background: var(--black);
+    color: white;
+}
+
+.hero-left {
+    padding: 100px 10% 90px 15%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-tag {
+    color: var(--pink);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.hero-tag span {
+    width: 8px;
+    height: 8px;
+    background: var(--pink);
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(55px, 7vw, 95px);
+    line-height: .88;
+    letter-spacing: -6px;
+    margin: 27px 0;
+}
+
+.hero h1 em {
+    display: block;
+    color: var(--pink);
+    font-style: normal;
+}
+
+.hero-left p {
+    max-width: 480px;
+    color: #aaaab3;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 17px 22px;
+    font-size: 11px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--pink);
+    color: white;
+}
+
+.btn-primary b {
+    margin-left: 18px;
+}
+
+.btn-primary:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid #45454b;
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: white;
+}
+
+
+/* HERO IMAGE */
+
+.hero-right {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg, #08080b 0%, transparent 28%),
+        linear-gradient(0deg, rgba(0,0,0,.7), transparent 45%);
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 40px;
+    left: 45px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-caption span {
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero-caption strong {
+    font-family: "Montserrat";
+    font-size: 23px;
+    margin-top: 7px;
+}
+
+
+/* TICKER */
+
+.ticker {
+    min-height: 64px;
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background: var(--pink);
+    color: white;
+}
+
+.ticker-label {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticker-label i {
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+}
+
+.ticker-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* SECTION */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+.section-header span,
+.competition-title span {
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+}
+
+.section-header h2 {
+    font-family: "Montserrat";
+    font-size: 42px;
+    letter-spacing: -2.5px;
+    margin-top: 9px;
+}
+
+.section-header button {
+    border: none;
+    background: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.section-header button:hover {
+    color: var(--pink);
+}
+
+
+/* NEWS GRID */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 22px;
+}
+
+.news-main,
+.news-card {
+    background: white;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.news-main:hover,
+.news-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 22px 55px rgba(0,0,0,.09);
+}
+
+.news-img {
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-main .news-img {
+    height: 320px;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.news-main:hover img,
+.news-card:hover img {
+    transform: scale(1.06);
+}
+
+.news-img span {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+
+    background: var(--pink);
+    color: white;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.news-body {
+    padding: 25px;
+}
+
+.news-body small {
+    color: #999;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.news-body h3 {
+    font-family: "Montserrat";
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 13px 0;
+}
+
+.news-body p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.news-body a {
+    display: inline-block;
+    margin-top: 20px;
+
+    color: var(--pink);
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* WORLD HIGHLIGHT */
+
+.world-highlight {
+    min-height: 530px;
+
+    display: grid;
+    grid-template-columns: 55% 45%;
+
+    background: var(--black);
+    color: white;
+}
+
+.world-image {
+    overflow: hidden;
+}
+
+.world-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.world-text {
+    padding: 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.world-text > span {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.world-text h2 {
+    font-family: "Montserrat";
+    font-size: 50px;
+    line-height: .98;
+    letter-spacing: -3px;
+    margin: 20px 0;
+}
+
+.world-text p {
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.world-text a {
+    margin-top: 30px;
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* CLUBS */
+
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.club-card {
+    background: white;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.club-card:hover {
+    transform: translateY(-6px);
+}
+
+.club-photo {
+    height: 250px;
+    overflow: hidden;
+}
+
+.club-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.club-card:hover img {
+    transform: scale(1.05);
+}
+
+.club-content {
+    padding: 25px;
+}
+
+.club-content > span {
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.club-content h3 {
+    font-family: "Montserrat";
+    font-size: 24px;
+    margin: 8px 0 12px;
+}
+
+.club-content p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.club-content a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* SELECTIONS */
+
+.selection-section {
+    padding: 100px 8%;
+    background: var(--dark);
+    color: white;
+}
+
+.light h2 {
+    color: white;
+}
+
+.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.selection-card {
+    min-height: 330px;
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #19191f;
+
+    transition: .35s;
+}
+
+.selection-card:hover {
+    transform: translateY(-7px);
+}
+
+.selection-card.brazil {
+    background:
+        linear-gradient(135deg, rgba(0,0,0,.5), transparent),
+        linear-gradient(135deg, #087d46, #d9ad00);
+}
+
+.selection-card.portugal {
+    background:
+        linear-gradient(135deg, rgba(0,0,0,.5), transparent),
+        linear-gradient(135deg, #9e1010, #3b0505);
+}
+
+.selection-card.japan {
+    background:
+        linear-gradient(135deg, rgba(0,0,0,.5), transparent),
+        linear-gradient(135deg, #222d70, #b90038);
+}
+
+.selection-flag {
+    font-size: 50px;
+}
+
+.selection-card > span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    margin-top: 30px;
+}
+
+.selection-card h3 {
+    font-family: "Montserrat";
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.selection-card p {
+    color: rgba(255,255,255,.75);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.selection-card strong {
+    margin-top: auto;
+    font-size: 10px;
+}
+
+
+/* MATCHES */
+
+.matches {
+    display: grid;
+    gap: 12px;
+}
+
+.match {
+    background: white;
+    border: 1px solid var(--line);
+
+    min-height: 100px;
+    padding: 20px 28px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr 60px 1fr 190px;
+    align-items: center;
+
+    transition: .3s;
+}
+
+.match:hover {
+    border-color: var(--pink);
+    transform: translateX(5px);
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-box strong {
+    font-family: "Montserrat";
+    font-size: 28px;
+}
+
+.date-box span {
+    color: var(--pink);
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.vs {
+    text-align: center;
+    color: var(--pink);
+    font-weight: 900;
+}
+
+.place {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* COMPETITIONS */
+
+.competitions {
+    padding: 100px 10%;
+    background: #ededf0;
+
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+
+.competition-title h2 {
+    font-family: "Montserrat";
+    font-size: 52px;
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-top: 15px;
+}
+
+.competition-list > div {
+    min-height: 100px;
+
+    display: grid;
+    grid-template-columns: 50px 1fr 30px;
+    align-items: center;
+
+    border-top: 1px solid #d4d4d8;
+
+    transition: .3s;
+}
+
+.competition-list > div:hover {
+    padding-left: 12px;
+}
+
+.competition-list b {
+    color: var(--pink);
+    font-size: 11px;
+}
+
+.competition-list h3 {
+    font-family: "Montserrat";
+    font-size: 18px;
+}
+
+.competition-list p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.competition-list strong {
+    font-size: 20px;
+}
+
+
+/* NEWSLETTER */
+
+.newsletter {
+    padding: 75px 8%;
+
+    background: var(--pink);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.newsletter > div > span {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.newsletter h2 {
+    font-family: "Montserrat";
+    font-size: 39px;
+    margin: 9px 0;
+}
+
+.newsletter p {
+    opacity: .8;
+}
+
+.newsletter form {
+    min-width: 430px;
+    display: flex;
+}
+
+.newsletter input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 18px;
+}
+
+.newsletter button {
+    border: none;
+    background: black;
+    color: white;
+    padding: 0 24px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #07070a;
+    color: white;
+    padding: 60px 8% 25px;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    font-family: "Montserrat";
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.footer-logo strong {
+    color: var(--pink);
+}
+
+.footer-top p {
+    color: #777;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: #555;
+    font-size: 10px;
+}
+
+
+/* TOAST */
+
+#toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    background: #111;
+    color: white;
+
+    padding: 18px 24px;
+
+    border-left: 4px solid var(--pink);
+
+    opacity: 0;
+    transform: translateY(100px);
+
+    transition: .4s;
+
+    z-index: 5000;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width: 1050px) {
+
+    nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-left {
+        padding: 80px 8%;
+    }
+
+    .hero-right {
+        height: 480px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .news-main {
+        grid-column: span 2;
+    }
+
+    .clubs-grid,
+    .selection-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .match {
+        grid-template-columns: 60px 1fr 50px 1fr;
+    }
+
+    .place {
+        grid-column: 2 / -1;
+        margin-top: 8px;
+    }
+
+    .competitions {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media(max-width: 650px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        right: 0;
+
+        background: white;
+
+        padding: 25px;
+
+        flex-direction: column;
+        gap: 20px;
+
+        z-index: 999;
+
+        box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: black;
+        font-weight: 800;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: fit-content;
+    }
+
+    .ticker {
+        padding: 15px 5%;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .section-header {
+        display: block;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-main {
+        grid-column: auto;
+    }
+
+    .world-highlight {
+        grid-template-columns: 1fr;
+    }
+
+    .world-image {
+        height: 350px;
+    }
+
+    .world-text {
+        padding: 55px 7%;
+    }
+
+    .world-text h2 {
+        font-size: 40px;
+    }
+
+    .clubs-grid,
+    .selection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selection-section {
+        padding: 70px 5%;
+    }
+
+    .match {
+        grid-template-columns: 50px 1fr 40px 1fr;
+        padding: 18px 10px;
+    }
+
+    .team {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        padding: 60px 5%;
+    }
+
+    .newsletter h2 {
+        font-size: 30px;
+    }
+
+    .newsletter form {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+}
